@@ -1,0 +1,17 @@
+{
+  "extends": "../../tslint.json",
+  "rules": {
+    "directive-selector": [
+      true,
+      "attribute",
+      "ngxImageForge",
+      "camelCase"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      "ngx-image-forge",
+      "kebab-case"
+    ]
+  }
+}

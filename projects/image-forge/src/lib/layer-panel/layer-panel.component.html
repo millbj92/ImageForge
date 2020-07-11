@@ -1,0 +1,18 @@
+<div [ngClass]="{'layer-panel-container' : true, 'open': showPanel}">
+    <div class="layer-panel">
+        <div class="heading">
+            <h3 class="heading-tertiary filter-heading" style="margin-top: 1rem;">Layers</h3>
+        </div>
+        <div class="heading-line"></div>
+        <ul cdkDropList (cdkDropListDropped)="layerDropped($event)" class="layer-list">
+            <li (click)="selectLayer(l)" [ngClass]="{'layer-list-item' : true, 'layer-item-selected' : this.selectedLayer === l}" cdkDrag [cdkDragDisabled]="l.locked" *ngFor="let l of Layers; let i = index">
+                <ion-icon (click)="toggleVisibility(l, $event)" [attr.name]="l.visible === true ? 'eye-outline' : 'eye-off-outline'"></ion-icon>
+                <ion-icon style="margin-left: 0.5rem" (click)="deleteLayer(l)" name="trash-outline"></ion-icon>
+                <ion-icon (click)="toggleLocked(l, $event)" style="margin-left: 0.5rem" [attr.name]="l.locked === true ? 'lock-closed-outline' : 'lock-open-outline'"></ion-icon>
+                <ion-icon (click)="toggleOutline(l, $event)" style="margin-left: 0.5rem"  name="square-outline"></ion-icon>
+                <p class="layer-item-name">{{l.name}}</p>
+            </li>
+        </ul>
+    </div>
+    <layer-properties-panel></layer-properties-panel>
+</div>

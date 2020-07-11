@@ -1,0 +1,33 @@
+$color-primary: #e7a779;
+$color-primary-medium: #E8895C;
+$color-primary-dark: #cc5d25;
+$color-primary-darkest: #ac4817;
+
+
+$color-secondary-accent: #C1E2EB;
+$color-secondary: #46A9D4;
+$color-secondary-medium: #14587F;
+$color-secondary-dark: #043454;
+$color-secondary-darkest: #042941;
+
+$color-success: #a3d853;
+$color-warn: #cc3300;
+
+//Basic Colors
+$color-gray-light-1: #e9e0e0;
+$color-gray-light-2: #f2f2f2;
+$color-gray: #d3d3d3;
+$color-dark-gray: #777;
+$color-dark-gray-2: #999;
+$color-dark-gray-3: #333;
+$color-white: #fff;
+$color-black: #000;
+
+$shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+$shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);
+$line: 1px solid $color-primary-dark;
+$icon-margin: 0.3rem;
+$default-font-size: 1.6rem;
+
+$swift-ease-out-duration: 400ms !default;
+$swift-ease-out-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1) !default;

@@ -1,0 +1,21 @@
+<div [ngClass]="{'layer-properties' : true, 'open' : showPanel}">
+    <div class="heading">
+        <span style="display: flex; align-items: center; justify-content: space-between; padding: 0 1rem; margin-top: 1rem;"><h3 class="heading-tertiary filter-heading">Properties</h3><ion-icon (click)="showPanel = !showPanel" [ngClass]="{'properties-button' : true, 'open' : showPanel}" name="chevron-up-circle-outline"></ion-icon></span>
+    </div>
+    <div class="heading-line"></div>
+    <ul *ngIf="showPanel" class="layer-list">
+        <li class="layer-property-item">
+            <p>Blend Mode</p>
+        </li>
+        <li class="layer-property-item">
+            <p>Opacity</p>
+            <div class="slider-container">
+                <input type="range" min="0" max="1" step="0.01" (ngModelChange)="changeLayerOpacity($event)" [ngModel]="selectedLayer.opacity" class="slider" />
+            </div>
+        </li>
+        <li class="layer-property-item">Stroke</li>
+        <li class="layer-property-item">Color Overlay</li>
+        <li class="layer-property-item">Gradient Overlay</li>
+        <li class="layer-property-item">Drop Shadow</li>
+    </ul>
+</div>

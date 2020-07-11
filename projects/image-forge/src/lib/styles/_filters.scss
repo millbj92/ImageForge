@@ -1,0 +1,296 @@
+.oldies {
+    position: relative;
+    -webkit-filter: contrast(110%) brightness(110%) saturate(130%);
+    filter: contrast(110%) brightness(110%) saturate(130%);
+
+    &::before {
+        content: "";
+        display: block;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        position: absolute;
+        pointer-events: none;
+        mix-blend-mode: screen;
+        background: rgba(243, 106, 188, 0.3);
+       }
+}
+
+.aden {
+    position: relative;
+    -webkit-filter: contrast(90%) brightness(120%) saturate(85%) hue-rotate(20deg);
+    filter: contrast(90%) brightness(120%) saturate(85%) hue-rotate(20deg);
+
+    &::before {
+        content: "";
+        display: block;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        position: absolute;
+        pointer-events: none;
+        mix-blend-mode: darken;
+        background: -webkit-linear-gradient(to right, rgba(66, 10, 14, 0.2) 1, rgba(66, 10, 14, 0));
+        background: linear-gradient(to right, rgba(66, 10, 14, 0.2) 1, rgba(66, 10, 14, 0));
+      }
+}
+
+.amaro{
+    position: relative;
+    -webkit-filter: contrast(90%) brightness(110%) saturate(150%) hue-rotate(-10deg);
+    filter: contrast(90%) brightness(110%) saturate(150%) hue-rotate(-10deg);
+}
+
+
+.brannan {
+    position: relative;
+    -webkit-filter: contrast(140%) sepia(50%);
+    filter: contrast(140%) sepia(50%);
+
+    &::before {
+        content: "";
+        display: block;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        position: absolute;
+        pointer-events: none;
+        mix-blend-mode: lighten;
+        background: rgba(161, 44, 199, 0.31);
+      }
+  }
+
+.brooklyn {
+position: relative;
+-webkit-filter: contrast(90%) brightness(110%);
+filter: contrast(90%) brightness(110%);
+
+&::before {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+    background: -webkit-radial-gradient(50% 50%, circle closest-corner, rgba(168, 223, 193, 0.4) 1, rgba(183, 196, 200, 0.2));
+    background: radial-gradient(50% 50%, circle closest-corner, rgba(168, 223, 193, 0.4) 1 , rgba(183, 196, 200, 0.2));
+    }
+}
+
+.clarendon {
+    position: relative;
+    -webkit-filter: contrast(120%) saturate(125%);
+    filter: contrast(120%) saturate(125%);
+
+    &::before {
+        content: "";
+        display: block;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        position: absolute;
+        pointer-events: none;
+        mix-blend-mode: overlay;
+        background: rgba(127, 187, 227, 0.2);
+      }
+  }
+
+  .earlybird {
+    position: relative;
+    -webkit-filter: contrast(90%) sepia(20%);
+    filter: contrast(90%) sepia(20%);
+
+    &::before {
+        content: "";
+        display: block;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        position: absolute;
+        pointer-events: none;
+        mix-blend-mode: overlay;
+        background: -webkit-radial-gradient(50% 50%, circle closest-corner, rgba(208, 186, 142, 1) 20, rgba(29, 2, 16, 0.2));
+        background: radial-gradient(50% 50%, circle closest-corner, rgba(208, 186, 142, 1) 20, rgba(29, 2, 16, 0.2));
+  }
+}
+
+.gingham {
+    position: relative;
+    -webkit-filter: brightness(105%) hue-rotate(350deg);
+    filter: brightness(105%) hue-rotate(350deg);
+
+    &::before {
+        content: "";
+        display: block;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        position: absolute;
+        pointer-events: none;
+        mix-blend-mode: darken;
+        background: -webkit-linear-gradient(to right, rgba(66, 10, 14, 0.2) 1, rgba(0, 0, 0, 0));
+        background: linear-gradient(to right, rgba(66, 10, 14, 0.2) 1, rgba(0, 0, 0, 0));
+      }
+  }
+
+  .hudson {
+    position: relative;
+    -webkit-filter: contrast(90%) brightness(120%) saturate(110%);
+    filter: contrast(90%) brightness(120%) saturate(110%);
+    &::before {
+        content: "";
+        display: block;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        position: absolute;
+        pointer-events: none;
+        mix-blend-mode: multiply;
+        opacity: 0.5;
+        background: -webkit-radial-gradient(50% 50%, circle closest-corner, rgba(255, 177, 166, 1) 50, rgba(52, 33, 52, 1));
+        background: radial-gradient(50% 50%, circle closest-corner, rgba(255, 177, 166, 1) 50, rgba(52, 33, 52, 1));
+      }
+  }
+
+  .inkwell {
+    position: relative;
+    -webkit-filter: contrast(110%) brightness(110%) sepia(30%) grayscale(100%);
+    filter: contrast(110%) brightness(110%) sepia(30%) grayscale(100%);
+
+    &::before {
+        content: "";
+        display: block;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        position: absolute;
+        pointer-events: none;
+        background: rgba(0, 0, 0, 0);
+      }
+  }
+
+  .lofi {
+    position: relative;
+    -webkit-filter: contrast(150%) saturate(110%);
+    filter: contrast(150%) saturate(110%);
+
+    &::before {
+        content: "";
+        display: block;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        position: absolute;
+        pointer-events: none;
+        mix-blend-mode: multiply;
+        background: -webkit-radial-gradient(center center, circle closest-corner, rgba(0, 0, 0, 0) 70%, rgb(34, 34, 34) 100%);
+        background: radial-gradient(center center, circle closest-corner, rgba(0, 0, 0, 0) 70%, rgb(34, 34, 34) 100%);
+      }
+  }
+
+  .maven {
+    position: relative;
+    -webkit-filter: contrast(95%) brightness(95%) saturate(150%) sepia(25%);
+    filter: contrast(95%) brightness(95%) saturate(150%) sepia(25%);
+
+    &::before {
+        content: "";
+        display: block;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        position: absolute;
+        pointer-events: none;
+        mix-blend-mode: hue;
+        background: rgba(3, 230, 26, 0.2);
+      }
+  }
+
+  .perpetua {
+    position: relative;
+    &::before {
+        content: "";
+        display: block;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        position: absolute;
+        pointer-events: none;
+        mix-blend-mode: soft-light;
+        opacity: 0.5;
+        background: -webkit-linear-gradient(to bottom, rgba(0, 91, 154, 1) 1, rgba(61, 193, 230, 0));
+        background: linear-gradient(to bottom, rgba(0, 91, 154, 1) 1, rgba(61, 193, 230, 0));
+      }
+  }
+
+  .reyes {
+    position: relative;
+    -webkit-filter: contrast(85%) brightness(110%) saturate(75%) sepia(22%);
+    filter: contrast(85%) brightness(110%) saturate(75%) sepia(22%);
+    &::before {
+        content: "";
+        display: block;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        position: absolute;
+        pointer-events: none;
+        mix-blend-mode: soft-light;
+        opacity: 0.5;
+        background: rgba(173, 205, 239, 1);
+  }
+}
+
+.stinson {
+    position: relative;
+    -webkit-filter: contrast(75%) brightness(115%) saturate(85%);
+    filter: contrast(75%) brightness(115%) saturate(85%);
+
+    &::before {
+        content: "";
+        display: block;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        position: absolute;
+        pointer-events: none;
+        mix-blend-mode: soft-light;
+        background: rgba(240, 149, 128, 0.2);
+      }
+  }
+
+  .toaster {
+    position: relative;
+    -webkit-filter: contrast(150%) brightness(90%);
+    filter: contrast(150%) brightness(90%);
+    &::before {
+        content: "";
+        display: block;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        position: absolute;
+        pointer-events: none;
+        mix-blend-mode: screen;
+        opacity: 0.5;
+        background: -webkit-radial-gradient(50% 50%, circle closest-corner, rgba(15, 78, 128, 1) 1, rgba(59, 0, 59, 1));
+        background: radial-gradient(50% 50%, circle closest-corner, rgba(15, 78, 128, 1) 1, rgba(59, 0, 59, 1));
+      }
+  }

@@ -1,0 +1,63 @@
+@import '../styles/variables';
+
+.layer-panel-container{
+    height:100%;
+    width: 20rem;
+    background-color: rgba($color-gray, .8);
+    padding: .5rem 2rem;
+    box-shadow: $shadow-dark;
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: 0;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all .2s;
+
+    &.open{
+        visibility: visible;
+        max-width: 20rem;
+        opacity: 1;
+    }
+}
+
+.layer-list{
+    list-style: none;
+    padding: 0;
+}
+
+.layer-panel{
+    flex-grow: 1;
+    & .heading-line{
+        margin-top: 1rem;
+        border-bottom: $line;
+    }
+
+    & .filter-heading{
+        color: $color-primary-dark;
+    }    
+}
+
+.layer-list-item{
+    display: flex;
+    align-items: center;
+    margin-top: 1.5rem;
+    padding: .5rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    height: 2rem;
+    font-size: 1.2rem;
+    transition: all .2s;
+    color: $color-gray-light-1;
+    background-image: linear-gradient(to right bottom, $color-secondary, $color-secondary-medium);
+
+    &.layer-item-selected{
+        background-image: linear-gradient(to right bottom, $color-primary-dark, $color-primary-medium);
+    }
+}
+
+.layer-item-name{
+    margin-left: auto;
+}

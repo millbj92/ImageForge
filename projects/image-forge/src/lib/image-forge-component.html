@@ -1,0 +1,113 @@
+
+<div class="if-container">
+    <div class="if-background">
+    <div style="color: black; position: absolute; top: 0; width: 100%; display: flex; justify-content: space-around; align-items: center;" *ngIf="debugMode">
+        <div style="display:flex; flex-direction: column" class="debug-input-container">
+            <label>imageCropHeight</label>
+            <input (ngModelChange)="setImageClip()" [(ngModel)]="imageCropHeight" />
+        </div>
+        <div style="display:flex; flex-direction: column" class="debug-input-container">
+            <label>imageCropY</label>
+            <input (ngModelChange)="setImageClip()" [(ngModel)]="imageCropY" />
+        </div>
+        <div style="display:flex; flex-direction: column" class="debug-input-container">
+            <label>imageCropWidth</label>
+            <input (ngModelChange)="setImageClip()" [(ngModel)]="imageCropWidth" />
+        </div>
+        <div  style="display:flex; flex-direction: column" class="debug-input-container">
+            <label>imageCropX</label>
+            <input (ngModelChange)="setImageClip()" [(ngModel)]="imageCropX" />
+        </div>
+        <div style="display:flex; flex-direction: column" class="debug-input-container">
+            <label>cropHeight</label>
+            <input (ngModelChange)="setImageClip()" [(ngModel)]="cropHeight" />
+        </div>
+        <div style="display:flex; flex-direction: column" class="debug-input-container">
+            <label>cropY</label>
+            <input (ngModelChange)="setImageClip()" [(ngModel)]="cropY" />
+        </div>
+        <div style="display:flex; flex-direction: column" class="debug-input-container">
+            <label>cropWidth</label>
+            <input (ngModelChange)="setImageClip()" [(ngModel)]="cropWidth" />
+        </div>
+        <div  style="display:flex; flex-direction: column" class="debug-input-container">
+            <label>cropX</label>
+            <input (ngModelChange)="setImageClip()" [(ngModel)]="cropX" />
+        </div>
+        <div  style="display:flex; flex-direction: column" class="debug-input-container">
+            <label>imageX</label>
+            <input (ngModelChange)="setImageClip()" [(ngModel)]="imageX" />
+        </div>
+        <div  style="display:flex; flex-direction: column" class="debug-input-container">
+            <label>imageY</label>
+            <input (ngModelChange)="setImageClip()" [(ngModel)]="imageY" />
+        </div>
+        <div  style="display:flex; flex-direction: column" class="debug-input-container">
+            <label>imageWidth</label>
+            <input (ngModelChange)="setImageClip()" [(ngModel)]="imageWidth" />
+        </div>
+        <div  style="display:flex; flex-direction: column" class="debug-input-container">
+            <label>imageHeight</label>
+            <input (ngModelChange)="setImageClip()" [(ngModel)]="imageHeight" />
+        </div>
+        <div style="margin-top: 1rem;">
+            <button (click)="drawCanvas()">Draw Canvas</button>
+        </div>
+    </div>
+    
+    <filter-panel [showPanel]="showFilterPanel"></filter-panel>
+    <div [ngClass]="{'text-panel': true, 'open': this.currentEditState === editState.Text}">
+        <div class="heading">
+            <h3 class="heading-tertiary filter-heading" style="margin-top: 1rem;">Text</h3>
+        </div>
+        <div class="heading-line"></div>
+
+    </div>
+    <layer-panel [showPanel]="showLayersPanel"></layer-panel>
+    <div  class="main-container">
+        <div  #imgBoundry class="editor-container">
+            <input style="display: none;" type="file" #fileDropRef id="fileDropRef" (change)="fileBrowseHandler($event.target.files)" />
+            <canvas dragdrop LayerDrag (fileDropped)="onFileDropped($event)" [style.height]="canvasHeight + 'px'" [style.width]="canvasWidth + 'px'" style="overflow: visible;" #canvas >
+            </canvas>
+            
+            <ng-container *ngIf="this.currentEditState === editState.Crop">
+                <div [style.height]="canvasHeight + 'px'" [style.width]="canvasWidth + 'px'" [style.clip-path]="currentCrop" #cropOverlay class="crop-overlay">
+                </div>
+            </ng-container>
+            <ng-container *ngIf="this.doOverlay === true">
+                <div [style.height]="canvasHeight + 'px'" [style.width]="canvasWidth + 'px'" [ngStyle]="overlayStyle" [style.clip-path]="originalClip" class="image-overlay">
+                </div>
+                <div *ngIf="this.doFrame === true" [style.height]="canvasHeight / 2 + 'px'" [style.width]="canvasWidth / 2 + 'px'" [ngStyle]="frameStyle" class="image-view">
+                </div>
+            </ng-container>
+        </div>
+        <div class="editor-controls">
+            <div style="display: flex; flex-direction: column; height: 20rem;" class="okay-cancel-container">
+                <ion-icon (click)="changeEditState(editState.Resize)" [ngClass]="{'editor-control': true,  'isactive': this.currentEditState === editState.Resize && this.currentResizeState === resizeState.Expand}" name="expand"></ion-icon>
+                <ion-icon (click)="this.currentResizeState = resizeState.Resize"[ngClass]="{'editor-control': true, 'isactive': this.currentEditState === editState.Resize && this.currentResizeState === resizeState.Resize, 'closed': this.currentEditState !== editState.Resize, 'open3': this.currentEditState === editState.Resize}" style="margin-top: 1rem;" name="resize-outline"></ion-icon>
+                <ion-icon (click)="recenterImage()"[ngClass]="{'editor-control': true, 'closed': this.currentEditState !== editState.Resize, 'open2': this.currentEditState === editState.Resize}" style="margin-top: 1rem;" name="reload-outline"></ion-icon>
+                <ion-icon  (click)="resetImageSize()" [ngClass]="{'editor-control': true, 'closed': this.currentEditState !== editState.Resize, 'open': this.currentEditState === editState.Resize}" style="margin-top: 1rem;" name="refresh-circle-outline"></ion-icon>
+            </div>     
+            <div style="display: flex; flex-direction: column; height: 20rem;" class="okay-cancel-container">
+                <ion-icon (click)="changeEditState(editState.Crop)" [ngClass]="{'editor-control': true,  'isactive': this.currentEditState === editState.Crop}" name="crop"></ion-icon>
+                <ion-icon (click)="setImageClip()" [ngClass]="{'editor-control': true, 'closed': this.currentEditState !== editState.Crop, 'open2': this.currentEditState === editState.Crop}" style="margin-top: 1rem; color: #a3d853" name="checkmark-circle-outline"></ion-icon>
+                <ion-icon (click)="resetClip()" [ngClass]="{'editor-control': true, 'closed': this.currentEditState !== editState.Crop, 'open': this.currentEditState === editState.Crop}" style="margin-top: 1rem; color: #c3502a;"name="close-circle-outline"></ion-icon>
+            </div>
+            <div style="display: flex; flex-direction: column; height: 20rem;" class="okay-cancel-container">
+                <ion-icon (click)="toggleFilterPanel()" [ngClass]="{'editor-control': true,  'isactive': showFilterPanel}" name="color-filter"></ion-icon>
+                <ion-icon [ngClass]="{'editor-control': true, 'closed': !showFilterPanel, 'open': showFilterPanel}" style="margin-top: 1rem;" name="add-circle-outline"></ion-icon>
+            </div>
+            <ion-icon (click)="changeEditState(editState.Text)" [ngClass]="{'editor-control': true,  'isactive': this.currentEditState === editState.Text}" name="text"></ion-icon>
+            <ion-icon (click)="changeEditState(editState.Draw)" [ngClass]="{'editor-control': true,  'isactive': this.currentEditState === editState.Draw}" name="pencil"></ion-icon>
+            <ion-icon *ngIf="this.selectedLayer !== undefined" (click)="layerService.toggleAspectGrid(this.selectedLayer)" [ngClass]="{'editor-control': true,  'isactive': selectedLayer.drawAspectGrid}" name="grid-outline"></ion-icon>
+            <div style="display: flex; flex-direction: column; height: 20rem;" class="okay-cancel-container">
+                <ion-icon (click)="toggleLayersPanel()" name="layers-outline" [ngClass]="{'editor-control': true,  'isactive': showLayersPanel}"></ion-icon>
+                <ion-icon (click)="createLayer()" [ngClass]="{'editor-control': true, 'closed': !showLayersPanel, 'open': showLayersPanel}" style="margin-top: 1rem;" name="add-circle-outline"></ion-icon>
+            </div>
+            <ion-icon [ngClass]="{'editor-control': true}" name="settings-outline"></ion-icon>
+        </div>
+    </div>
+</div>
+</div>
+
+

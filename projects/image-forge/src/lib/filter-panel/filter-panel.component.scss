@@ -1,0 +1,64 @@
+@import '../styles/variables';
+@import '../styles/filters';
+
+.filter-box{
+    height:100%;
+    width: 15rem;
+    background-color: rgba($color-gray, .8);
+    padding: .5rem 2rem;
+    box-shadow: $shadow-dark;
+    overflow-y: scroll;
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .2s;
+
+    & .heading-line{
+        margin-top: 1rem;
+        border-bottom: $line;
+    }
+
+    & .filter-heading{
+        color: $color-primary-dark;
+    }
+
+    &.open{
+        visibility: visible;
+        max-width: 15rem;
+        opacity: 1;
+    }
+}
+
+.filter-list{
+    list-style: none;
+    padding: 0;
+}
+
+.filter-list-item{
+    display: flex;
+    margin-top: 1.5rem;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    width: 100%;
+    transition: all .2s;
+
+    &:hover{
+        color: $color-gray-light-1;
+        background-image: linear-gradient(to right bottom, $color-secondary, $color-secondary-medium);
+    }
+
+    &:active{
+        transform: scale(.9);
+    }
+}
+
+.thumbnail{
+    height: 20px;
+    width: 20px;
+}

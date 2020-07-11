@@ -1,0 +1,15 @@
+<div [ngClass]="{'filter-box': true, 'open': showPanel}">
+    <div class="heading">
+        <h3 class="heading-tertiary filter-heading" style="margin-top: 1rem;">Filters</h3>
+    </div>
+    <div class="heading-line"></div>
+        <ul class="filter-list">
+            <li (click)="selectClass(i)" class="filter-list-item" *ngFor="let f of Filters; let i = index">
+                <p>{{f.name}}</p>
+                <figure style="height: 60px; width: 60px; margin-left: 1rem;" [class]="f.name.toLowerCase()">
+                    <div></div>
+                    <img style="height: 100%; width: 100%;"  [src]="this.source" />
+                </figure>
+            </li>
+        </ul>
+</div>
