@@ -1,0 +1,8 @@
+@import '../../styles/variables';
+.dc-drawer-panel-container{
+    background-color: rgba($color-gray, .8);
+    padding: .5rem 2rem;
+    box-shadow: $shadow-dark;
+    position: absolute;
+    transition: all .2s;
+}

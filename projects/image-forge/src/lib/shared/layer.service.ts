@@ -93,7 +93,7 @@ export class LayerService {
     this.selectedLayerChanged.next(this.selectedLayer);
   }
 
-  async getLayerSnapshot(layer: Layer) {
+  /*async getLayerSnapshot(layer: Layer) {
     let canvas: OffscreenCanvas = new OffscreenCanvas(
       this.selectedLayer.width,
       this.selectedLayer.height
@@ -102,7 +102,7 @@ export class LayerService {
     canvas.height = this.selectedLayer.height;
     this.selectedLayer.getLayerContext(canvas.getContext('2d'));
     return canvas.convertToBlob();
-  }
+  }*/
 
   constructor(private canvasService: CanvasService) {
     this.canvasService.canvasChanged.subscribe((canvas) => {
